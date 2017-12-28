@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="i.css" type="text/css">
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="wrapper">
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+	 <div class="navbar-header">
+            <a href="#" class="navbar-brand">Onstream</a>
+        </div>
+		<div>
+			<ul class="nav navbar-nav">
+             <li class="active"><a href="#">Blogs</a></li>
+            <li><a href="#">Login</a></li>
+             <li><a href="#">Signup</a></li>
+             <li><a href="#">About</a></li>
+			</ul>
+		</div>
+    </div>
+</nav>
+<div class="container">
+	<div class="row">
+		<div class="col-lg-4">
+<center>
+<h1>Post List</h1>
+{% for obj in object_list %}
+    <h2>{{ obj.title|upper }}</h2> <small>{{ obj.timestamp}}</small><br>
+    <p>{{ obj.content}}</p><br>
+{% endfor %}
+
+<div class="pagination">
+    <span class="step-links">
+        {% if object_list.has_previous %}
+            <a href="?page=1">&laquo; first</a>
+            <a href="?page={{ object_list.previous_page_number }}">previous</a>
+        {% endif %}
+
+        <span class="current">
+            Page {{ object_list.number }} of {{ object_list.paginator.num_pages }}.
+        </span>
+
+        {% if object_list.has_next %}
+            <a href="?page={{ object_list.next_page_number }}">next</a>
+            <a href="?page={{ object_list.paginator.num_pages }}">last &raquo;</a>
+        {% endif %}
+    </span>
+</div>
+
+</div>
+</div>
+</div>
+</center>
+</body>
+</html>
+
+
+
+
+
+
+

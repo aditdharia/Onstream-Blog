@@ -1,0 +1,236 @@
+﻿{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    
+    <!-- Meta Tag -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <!-- SEO -->
+    <meta name="description" content="150 words">
+    <meta name="author" content="uipasta">
+    <meta name="url" content="http://www.yourdomainname.com">
+    <meta name="copyright" content="company name">
+    <meta name="robots" content="index,follow">
+    
+    
+    <title>Onstream Blog</title>
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	  <link rel="shortcut icon" href="images/favicon/favicon.ico">
+    <link rel="apple-touch-icon" sizes="144x144" type="image/x-icon" href="images/favicon/apple-touch-icon.png">
+    <link rel="stylesheet" type="text/css" href="{% static 'blog/css/plugin.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'blog/css/style.css' %}">
+	 <link rel="stylesheet" type="text/css" href="{% static 'blog/css/sidebar.css' %}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:400,300,500,600,700">
+  
+    
+	  {% block head %} {% endblock %}
+      {% block title %} {% endblock %}
+	
+	</head>
+
+ <body>
+ <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+   <div class="navbar-header">
+            <a href="#" class="navbar-brand">Onstream</a>
+        </div>
+    <div>
+      <ul class="nav navbar-nav">
+             <li class="active"><a href="#">Blogs</a></li>
+            <li><a href="#">Login</a></li>
+             <li><a href="#">Signup</a></li>
+             <li><a href="#">About</a></li>
+      </ul>
+    </div>
+    </div>
+</nav>
+
+ 
+<!-- Preloader Start -->
+     <div class="preloader">
+	   <div class="rounder"></div>
+      </div>
+      <!-- Preloader End -->
+      
+	  <div id="main">
+        <div class="container">
+            <div class="row">
+			
+			
+			        <div class="col-md-3">
+                   <div class="about-fixed">
+                     <nav id="sidebar">
+        <!-- Sidebar Header -->
+        <div class="sidebar-header">
+          <h3><img src="{% static 'blog/images/adit.jpg' %}" class="img-circle" width="50" height="50"> {{ request.user.username }}</h3>
+        </div>
+
+        <!-- Sidebar Links -->
+        <ul class="list-unstyled components">
+            <li class="active"><a href="#">Dashboard</a></li>
+            <li><a href="#">My Blogs </a></li>
+
+            <li><!-- Link with dropdown items -->
+                <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false">Saved Blogs</a>
+                <ul class="collapse list-unstyled" id="homeSubmenu">
+                    <li><a href="#">Page</a></li>
+                    <li><a href="#">Page</a></li>
+                    <li><a href="#">Page</a></li>
+                </ul>
+
+            <li><a href="#">Portfolio</a></li>
+            <li><a href="#">Help</a></li>
+        </ul>
+    </nav>
+  </div>
+</div>
+			
+            	
+             <!-- Blog Post (Right Sidebar) Start -->
+                 <div class="col-md-9">
+                    <div class="col-md-12 page-body">
+                    	<div class="row">
+                    		
+                            
+                            <div class="sub-title">
+                           		<a href="index.html" title="Go to Home Page"><h2>Back Home</h2></a>
+                                <a href="#comment" class="smoth-scroll"><i class="icon-bubbles"></i></a>
+                             </div>
+                            
+                            
+                            <div class="col-md-12 content-page">
+                              <div class="col-md-12 blog-post">
+                            	
+                                
+                                <!-- Post Headline Start -->
+                                <div class="post-title">
+                                    <h1>{{ instance.title }}</h1> 
+                                   </div>
+                                   <!-- Post Headline End -->
+                                    
+                                    
+                                <!-- Post Detail Start -->
+                                <div class="post-info">
+                                    <span>{{ instance.timestamp }} by <a href="#" target="_blank">Alex Parker</a></span>
+                                   </div>
+                                   <!-- Post Detail End -->
+                                    
+                                    
+                                    <p>{{ instance.content }}</p>
+                     
+                                  
+                                  
+                                    <!-- Post Author Bio Box Start -->
+                                  <div class="about-author margin-top-70 margin-bottom-50">
+                                    
+                                    <div class="picture">
+                                      <img src="images/blog/author.png" class="img-responsive" alt="">
+                                     </div>
+                                   
+                                    <div class="c-padding">
+                                       <h3>Article By <a href="#" target="_blank" data-toggle="tooltip" data-placement="top" title="Visit Alex Website">Alex Parker</a></h3>
+                                       <p>You can use about author box when someone guest post on your blog, Lorem ipsum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna ad minim veniam.</p>
+                                      </div>
+                                    </div>
+                                    <!-- Post Author Bio Box End -->
+                                    
+                                    <!-- You May Also Like Start -->
+                                  <div class="you-may-also-like margin-top-50 margin-bottom-50">
+                                    <h3>You may also like</h3>
+                                     <div class="row">
+                                 
+                                    <div class="col-md-4 col-sm-6 col-xs-12">
+                                      <a href="single.html"><p>Make mailchimp singup form working with ajax using jquery plugin</p></a>
+                                     </div>
+                    
+                                    <div class="col-md-4 col-sm-6 col-xs-12">
+                                      <a href="single.html"><p>How to design elegant e-mail newsletter in html for wish christmas to your subscribers?</p></a>
+                                     </div>
+                    
+                                    <div class="col-md-4 col-sm-6 col-xs-12">
+                                      <a href="single.html"><p>How to customize a wordpress theme entirely from scratch using a child theme?</p></a>
+                                     </div>
+                                    
+                                    </div>
+                                  </div>
+                        
+                                   </div>
+								   
+								   </div>    
+                             </div>
+                           
+                  <!-- Subscribe Form Start -->
+                        <div class="col-md-8 col-md-offset-2">
+                           <form id="mc-form" method="post" action="http://uipasta.us14.list-manage.com/subscribe/post?u=854825d502cdc101233c08a21&amp;id=86e84d44b7">
+								
+						  <div class="subscribe-form margin-top-20">
+							 <input id="mc-email" type="email" placeholder="Email Address" class="text-input">
+							  <button class="submit-btn" type="submit">Submit</button>
+								</div>
+                                <p>Subscribe to my weekly newsletter</p>
+								<label for="mc-email" class="mc-label"></label>
+							  </form>
+                             
+                           </div>
+                           <!-- Subscribe Form End -->
+                           
+                           
+                         </div>
+                     
+                     
+                       
+                       <!-- Footer Start -->
+                       <div class="col-md-12 page-body margin-top-50 footer">
+                          <footer>
+                          <ul class="menu-link">
+                               <li><a href="index.html">Home</a></li>
+                               <li><a href="about.html">About</a></li>
+                               <li><a href="work.html">Work</a></li>
+                               <li><a href="contact.html">Contact</a></li>
+                            </ul>
+                            
+                          <p>© Copyright 2016 DevBlog. All rights reserved</p>
+						  
+						  
+						  <!-- UiPasta Credit Start -->
+                          <div class="uipasta-credit">Design By <a href="http://www.uipasta.com" target="_blank">UiPasta</a></div>
+                          <!-- UiPasta Credit End -->
+						  </footer>
+                       </div>
+                       <!-- Footer End -->
+                     </div>
+                 </div>
+         </div>
+      </div>
+     <!-- Endpage Box (Popup When Scroll Down) Start -->
+     <div id="scroll-down-popup" class="endpage-box">
+       <h4>Read Also</h4>
+       <a href="#">Put recommendation to suggest article</a>
+      </div>
+      <!-- Endpage Box (Popup When Scroll Down) End -->
+      
+    <!-- Back to Top Start -->
+    <a href="#" class="scroll-to-top"><i class="fa fa-long-arrow-up"></i></a>
+    <!-- Back to Top End -->
+    
+	<script type="text/javascript" src="{% static 'blog/js/jquery.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'blog/js/plugin.js' %}"></script>
+    <script type="text/javascript" src="{% static 'blog/js/scripts.js' %}"></script>
+    
+  
+	<script type="text/javascript">
+		SyntaxHighlighter.config.clipboardSwf = 'js/syntax/clipboard.swf';
+		SyntaxHighlighter.all();
+	</script>
+    {% block content %}
+      {% endblock %}
+    
+   </body>
+ </html>
