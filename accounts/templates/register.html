@@ -1,0 +1,18 @@
+{% load crispy_forms_tags %}
+<html>
+<head><link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"></head>
+{% block toggle_login %}{% endblock %}
+<body>
+	<h1> Register Form</h1>
+	<br>
+<div class="col-sm-4">
+  <form action="" method="POST" enctype="multipart/form-data" accept-charset="utf-8">
+    {% csrf_token %}
+    {{ form|crispy }}
+    <input class="btn btn-default" type="submit" value="Register">
+  </div>
+  </form>
+
+</body>
+</html>
